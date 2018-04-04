@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.crysoft.me.idsnitch.MainActivity"
+    android:background="@drawable/login"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="495dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white"
+
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="To verify an Identity, Select a Category below"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rose"
+                android:gravity="center"
+                android:text="Professional"
+                android:textAllCaps="true"
+                android:textColor="#fff" />
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="30dp"
+                android:background="@drawable/blue"
+                android:gravity="center"
+                android:text="Product"
+                android:textAllCaps="true"
+                android:textColor="#fff"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rose"
+                android:gravity="center"
+                android:text="Business"
+                android:textAllCaps="true"
+                android:textColor="#fff"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text='"Truth is the future"'
+            android:textColor="#fff"
+            android:layout_marginTop="220dp"
+            android:gravity="center_horizontal"
+            android:textStyle="italic"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>
