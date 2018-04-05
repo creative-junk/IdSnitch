@@ -20,7 +20,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
 
         <LinearLayout
@@ -45,16 +47,19 @@
                 android:gravity="center"
                 android:text="Professional"
                 android:textAllCaps="true"
-                android:textColor="#fff" />
+                android:textColor="#fff"
+                android:onClick="goToProfessional"/>
+
             <TextView
                 android:layout_width="180dp"
                 android:layout_height="30dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/blue"
                 android:gravity="center"
                 android:text="Product"
                 android:textAllCaps="true"
                 android:textColor="#fff"
-                android:layout_marginTop="20dp"/>
+                android:onClick="goToProduct"/>
             <TextView
                 android:layout_width="180dp"
                 android:layout_height="30dp"
@@ -64,7 +69,8 @@
                 android:textAllCaps="true"
                 android:textColor="#fff"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp"
+                android:onClick="goToBusiness"/>
         </LinearLayout>
         <TextView
             android:layout_width="300dp"

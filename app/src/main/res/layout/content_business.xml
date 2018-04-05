@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.crysoft.me.idsnitch.Business"
+    tools:context="com.crysoft.me.idsnitch.Activity.Business.Business"
     tools:showIn="@layout/activity_business">
+
 
     <ImageView
         android:layout_width="0dp"
@@ -20,28 +21,42 @@
         android:layout_width="368dp"
         android:layout_height="495dp"
         android:gravity="center"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="8dp">
+
 
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:background="@drawable/white"
             android:gravity="center"
+
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:text="To verify a Business' License:" />
+                android:layout_marginLeft="25dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"
-                android:text="i. Enter the Business Name Below" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:text="To verify a Business License:" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="i. Enter their Business Name Below" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="ii. Click on the Verify Button" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="270dp"
@@ -59,12 +74,22 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:hint="Business Name"
-                    android:singleLine="true"
-                    android:text="Business Name"
-                    android:textColor="@android:color/darker_gray" />
+                    android:textColorHint="@android:color/darker_gray" />
 
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/personWarning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorDanger"
+                android:padding="10dp"
+                android:text="No Results Found. Check the ID number and try again"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="270dp"
@@ -92,6 +117,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/rose"
                     android:gravity="center"
+                    android:onClick="goToMain"
                     android:text="Cancel"
                     android:textAllCaps="true"
                     android:textColor="#fff" />
@@ -99,23 +125,16 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="220dp"
-            android:gravity="center_horizontal"
-            android:text='"Truth is the future"'
-            android:textColor="#fff"
-            android:textStyle="italic" />
-        <TextView
             android:layout_width="240dp"
             android:layout_height="50dp"
-            android:textColor="#fff"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="-25dp"
+            android:background="@drawable/rose"
             android:gravity="center"
             android:text="IDENTITY SNITCH"
-            android:background="@drawable/rose"
-            android:layout_marginTop="-25dp"
-            android:layout_marginLeft="28dp"/>
+            android:textColor="#fff" />
 
     </RelativeLayout>
+
 
 </android.support.constraint.ConstraintLayout>

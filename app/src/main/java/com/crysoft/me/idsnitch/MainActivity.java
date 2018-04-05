@@ -1,7 +1,12 @@
 package com.crysoft.me.idsnitch;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.crysoft.me.idsnitch.Activity.Business.Business;
+import com.crysoft.me.idsnitch.Activity.Product.Product;
+import com.crysoft.me.idsnitch.Activity.Professional.Professional;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,4 +15,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    public void goToProfessional(){
+        Intent intent = new Intent(MainActivity.this,Professional.class);
+        startActivity(intent);
+    }
+    public void goToProduct(){
+        Intent intent = new Intent(MainActivity.this, Product.class);
+        startActivity(intent);
+    }
+    public void goToBusiness(){
+        Intent intent = new Intent(MainActivity.this, Business.class);
+        startActivity(intent);
+    }
+
+
 }

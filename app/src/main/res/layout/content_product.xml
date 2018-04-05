@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.crysoft.me.idsnitch.Product"
+    tools:context="com.crysoft.me.idsnitch.Activity.Product.Product"
     tools:showIn="@layout/activity_product">
 
     <ImageView
@@ -20,33 +20,74 @@
         android:layout_width="368dp"
         android:layout_height="495dp"
         android:gravity="center"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
 
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
             android:background="@drawable/white"
             android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:text="To verify a Business' License:" />
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"
-                android:text="i. Enter the Business Name Below" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="To verify the Authenticity of a Product:" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="i. Choose a Brand" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="ii. Enter the product's Serial Number" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="iii. Click the Verify Button" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="270dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_lock" />
+
+                <Spinner
+                    android:id="@+id/planets_spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -58,13 +99,23 @@
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:hint="Business Name"
+                    android:hint="Serial Number"
                     android:singleLine="true"
-                    android:text="Business Name"
-                    android:textColor="@android:color/darker_gray" />
-
+                    android:textColorHint="@android:color/darker_gray" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/productWarning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorDanger"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:text="Serial Number not Found. This product may not be Genuine"
+                android:textColor="@android:color/white" />
 
             <LinearLayout
                 android:layout_width="270dp"
@@ -92,29 +143,25 @@
                     android:layout_weight="1"
                     android:background="@drawable/rose"
                     android:gravity="center"
+                    android:onClick="goToMain"
                     android:text="Cancel"
                     android:textAllCaps="true"
                     android:textColor="#fff" />
             </LinearLayout>
+
         </LinearLayout>
 
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="220dp"
-            android:gravity="center_horizontal"
-            android:text='"Truth is the future"'
-            android:textColor="#fff"
-            android:textStyle="italic" />
+
+
         <TextView
             android:layout_width="240dp"
             android:layout_height="50dp"
-            android:textColor="#fff"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="-25dp"
+            android:background="@drawable/rose"
             android:gravity="center"
             android:text="IDENTITY SNITCH"
-            android:background="@drawable/rose"
-            android:layout_marginTop="-25dp"
-            android:layout_marginLeft="28dp"/>
-
+            android:textColor="#fff" />
     </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>

@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Professional"
+            android:name=".Activity.Professional.Professional"
             android:label="@string/title_activity_professional"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -26,7 +26,7 @@
                 android:value="com.crysoft.me.idsnitch.MainActivity" />
         </activity>
         <activity
-            android:name=".Product"
+            android:name=".Activity.Product.Product"
             android:label="@string/title_activity_product"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -35,7 +35,7 @@
                 android:value="com.crysoft.me.idsnitch.MainActivity" />
         </activity>
         <activity
-            android:name=".Business"
+            android:name=".Activity.Business.Business"
             android:label="@string/title_activity_business"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -43,6 +43,27 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.crysoft.me.idsnitch.MainActivity" />
         </activity>
+        <activity
+            android:name=".Activity.Business.BusinessList"
+            android:label="@string/title_activity_business_list"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crysoft.me.idsnitch.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Activity.Business.BusinessDetails"
+            android:label="@string/title_activity_business_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activity.Product.ProductDetails"
+            android:label="@string/title_activity_product_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activity.Professional.ProfessionalDetails"
+            android:label="@string/title_activity_professional_details"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

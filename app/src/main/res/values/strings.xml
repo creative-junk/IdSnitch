@@ -3,4 +3,8 @@
     <string name="title_activity_professional">Professional</string>
     <string name="title_activity_product">Product</string>
     <string name="title_activity_business">Business</string>
+    <string name="title_activity_business_list">Business List</string>
+    <string name="title_activity_business_details">Business Details</string>
+    <string name="title_activity_product_details">Product Details</string>
+    <string name="title_activity_professional_details">Professional Profile</string>
 </resources>
