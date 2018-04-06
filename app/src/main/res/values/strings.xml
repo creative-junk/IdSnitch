@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">IDENTITY SNITCH</string>
+    <string name="liveurl">http://10.0.2.2:8000/api</string>
+
     <string name="title_activity_professional">Professional</string>
     <string name="title_activity_product">Product</string>
     <string name="title_activity_business">Business</string>
