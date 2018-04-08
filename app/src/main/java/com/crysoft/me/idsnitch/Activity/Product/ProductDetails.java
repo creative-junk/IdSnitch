@@ -12,10 +12,7 @@ import com.crysoft.me.idsnitch.R;
 import com.crysoft.me.idsnitch.models.ProductModel;
 
 public class ProductDetails extends AppCompatActivity {
-    private TextView tvSerialNumber;
-    private TextView tvBrand;
-    private TextView tvProductInfo;
-    private TextView tvDistributorInfo;
+    private TextView tvSerialNumber,tvBrand,tvProductInfo,tvDistributorInfo,tvProductName;
 
     ProductModel product;
     @Override
@@ -30,6 +27,7 @@ public class ProductDetails extends AppCompatActivity {
         tvBrand = (TextView) findViewById(R.id.tvBrand);
         tvProductInfo = (TextView) findViewById(R.id.tvProductInfo);
         tvDistributorInfo = (TextView) findViewById(R.id.tvDistributorInfo);
+        tvProductName = (TextView) findViewById(R.id.tvProductName);
 
         product = getIntent().getExtras().getParcelable("product");
 
@@ -37,7 +35,7 @@ public class ProductDetails extends AppCompatActivity {
         tvBrand.setText(product.getBrand());
         tvProductInfo.setText(product.getDescription());
         tvDistributorInfo.setText(product.getDistributor());
-
+        tvProductName.setText(product.getBrand());
     }
 
 }

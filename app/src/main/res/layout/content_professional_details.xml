@@ -145,31 +145,34 @@
                 android:layout_height="wrap_content"
                 android:text="Issued By"
                 android:textSize="12sp"
+                android:textStyle="bold"
                 android:layout_weight="1"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Certification"
                 android:textSize="12sp"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Period"
                 android:textSize="12sp"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Qualification"
-
+                android:textStyle="bold"
                 android:textSize="12sp"
                 android:layout_weight="1"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Category"
-
+                android:textStyle="bold"
                 android:textSize="12sp"
                 android:layout_weight="1"/>
 
@@ -198,18 +201,20 @@
                 android:layout_height="wrap_content"
                 android:text="Issued By"
                 android:textSize="12sp"
+                android:textStyle="bold"
                 android:layout_weight="1"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Graduation Year"
                 android:textSize="12sp"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Qualification"
-
+                android:textStyle="bold"
                 android:textSize="12sp"
                 android:layout_weight="1"/>
         </LinearLayout>

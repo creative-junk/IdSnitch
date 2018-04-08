@@ -30,6 +30,8 @@ public class BusinessList extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        lvBusiness = (ListView) findViewById(R.id.lvBusiness);
+
         businessList = getIntent().getParcelableArrayListExtra("businessList");
 
         BusinessAdapter businessAdapter = new BusinessAdapter(BusinessList.this,businessList);

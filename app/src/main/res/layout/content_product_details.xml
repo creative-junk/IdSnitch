@@ -7,7 +7,28 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.crysoft.me.idsnitch.Activity.Product.ProductDetails"
     tools:showIn="@layout/activity_product_details"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="10dp">
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/solid_circle"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_check"
+            android:tint="#fff"/>
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Genuine Product"
+            android:textColor="#fff"
+            android:textStyle="bold"/>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +38,7 @@
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/tvFullNames"
+            android:id="@+id/tvProductName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"

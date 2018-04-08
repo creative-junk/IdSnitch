@@ -4,7 +4,10 @@
     android:layout_height="match_parent">
     <TextView
         android:id="@+id/tvBusinessName"
+        android:padding="10dp"
+        android:layout_margin="1dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/white"
         android:text="Business Name"/>
 </LinearLayout>

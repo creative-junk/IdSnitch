@@ -8,6 +8,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -118,8 +119,8 @@ public class Professional extends AppCompatActivity {
             try {
                 URL hp=null;
 
-                hp = new URL(getString(R.string.liveurl)+"/verify"+idNumber+"/professional");
-
+                hp = new URL(getString(R.string.liveurl)+"/verify/"+idNumber+"/professional");
+                Log.i("URL",hp.toString());
                 HttpURLConnection hpCon = (HttpURLConnection) hp.openConnection();
                 hpCon.connect();
 
@@ -127,6 +128,7 @@ public class Professional extends AppCompatActivity {
                 String errMessage = hpCon.getResponseMessage();
 
                 if (responseCode == 200){
+                    Log.i("found:","user");
                     inputStream = hpCon.getInputStream();
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                     StringBuilder stringBuilder = new StringBuilder();

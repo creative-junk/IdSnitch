@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -35,13 +36,8 @@ public class ProfessionalDetails extends AppCompatActivity {
     private ProfessionalModel professional;
     private ArrayList<CertificationModel> certificationList;
     private ArrayList<EducationModel> educationList;
-    private TextView tvFirstName;
-    private TextView tvLastName;
-    private TextView tvMiddleName;
-    private TextView tvIdNumber;
-    private TextView tvCountry;
-    private ListView lvCertification;
-    private ListView lvEducation;
+    private TextView tvFirstName,tvLastName,tvMiddleName,tvIdNumber,tvCountry,tvFullNames;
+    private ListView lvCertification,lvEducation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +51,7 @@ public class ProfessionalDetails extends AppCompatActivity {
         tvLastName = (TextView) findViewById(R.id.tvLastName);
         tvIdNumber = (TextView) findViewById(R.id.tvIdNumber);
         tvCountry = (TextView) findViewById(R.id.tvCountry);
+        tvFullNames = (TextView) findViewById(R.id.tvFullNames);
 
 
         professional = getIntent().getExtras().getParcelable("professional");
@@ -64,6 +61,7 @@ public class ProfessionalDetails extends AppCompatActivity {
         tvLastName.setText(professional.getLastName());
         tvIdNumber.setText(professional.getIdNumber());
         tvCountry.setText(professional.getCountry());
+        tvFullNames.setText(professional.getFirstName()+" "+professional.getLastName());
 
         certificationList = new ArrayList<>();
         educationList = new ArrayList<>();
@@ -88,8 +86,8 @@ public class ProfessionalDetails extends AppCompatActivity {
                 educationList.clear();
                 certificationList.clear();
 
-                hp = new URL(getString(R.string.liveurl)+"/api/profile/"+userId+"/view");
-
+                hp = new URL(getString(R.string.liveurl)+"/profile/"+userId+"/view");
+                Log.i("URL",hp.toString());
                 HttpURLConnection hpCon = (HttpURLConnection) hp.openConnection();
                 hpCon.connect();
 
@@ -109,30 +107,32 @@ public class ProfessionalDetails extends AppCompatActivity {
                     result = stringBuilder.toString();
 
                     JSONObject profileObject = new JSONObject(result);
-                    JSONArray certificates = profileObject.getJSONArray("certification");
-                    JSONArray educations = profileObject.getJSONArray("education");
 
-                    int certLength = certificates.length();
-                    int eduLength = educations.length();
-
-                    for (int i=0;i < certificates.length();i++){
-                        JSONObject cert = certificates.getJSONObject(i);
-                        CertificationModel certificateDetails = new CertificationModel();
-                        certificateDetails.setOrganization(cert.getString("organization"));
-                        certificateDetails.setCertification(cert.getString("certification"));
-                        certificateDetails.setPeriod(cert.getString("period"));
-                        certificateDetails.setQualification(cert.getString("qualification"));
-                        certificateDetails.setCategory(cert.getString("category"));
-                        certificationList.add(certificateDetails);
+                    if (profileObject.has("certification")) {
+                        JSONArray certificates = profileObject.getJSONArray("certification");
+                        for (int i = 0; i < certificates.length(); i++) {
+                            JSONObject cert = certificates.getJSONObject(i);
+                            Log.i("Org", cert.getString("organization"));
+                            CertificationModel certificateDetails = new CertificationModel();
+                            certificateDetails.setOrganization(cert.getString("organization"));
+                            certificateDetails.setCertification(cert.getString("certification"));
+                            certificateDetails.setPeriod(cert.getString("period"));
+                            certificateDetails.setQualification(cert.getString("qualification"));
+                            certificateDetails.setCategory(cert.getString("category"));
+                            certificationList.add(certificateDetails);
+                        }
                     }
+                    if(profileObject.has("education")) {
+                        JSONArray educations = profileObject.getJSONArray("education");
 
-                    for (int i=0;i<educations.length();i++){
-                        JSONObject edu = educations.getJSONObject(i);
-                        EducationModel educationDetails = new EducationModel();
-                        educationDetails.setInstitution(edu.getString("institution"));
-                        educationDetails.setGraduationYear(edu.getString("graduationYear"));
-                        educationDetails.setQualification(edu.getString("qualification"));
-                        educationList.add(educationDetails);
+                        for (int i = 0; i < educations.length(); i++) {
+                            JSONObject edu = educations.getJSONObject(i);
+                            EducationModel educationDetails = new EducationModel();
+                            educationDetails.setInstitution(edu.getString("institution"));
+                            educationDetails.setGraduationYear(edu.getString("graduationYear"));
+                            educationDetails.setQualification(edu.getString("qualification"));
+                            educationList.add(educationDetails);
+                        }
                     }
 
                 }

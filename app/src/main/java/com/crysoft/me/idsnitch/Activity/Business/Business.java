@@ -8,8 +8,10 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -25,6 +27,7 @@ import com.crysoft.me.idsnitch.R;
 import com.crysoft.me.idsnitch.adapters.BusinessAdapter;
 import com.crysoft.me.idsnitch.adapters.CertificationAdapter;
 import com.crysoft.me.idsnitch.adapters.EducationAdapter;
+import com.crysoft.me.idsnitch.models.BrandModel;
 import com.crysoft.me.idsnitch.models.BusinessModel;
 import com.crysoft.me.idsnitch.models.CertificationModel;
 import com.crysoft.me.idsnitch.models.EducationModel;
@@ -75,7 +78,7 @@ public class Business extends AppCompatActivity {
 
         tvBusinessWarning = (TextView) findViewById(R.id.tvBusinessWarning);
 
-        tvVerify = (Button) findViewById(R.id.tvVerify);
+        tvVerify = (Button) findViewById(R.id.tvBusinessVerify);
 
         tvVerify.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,13 +124,19 @@ public class Business extends AppCompatActivity {
             businessName=strBusinessName;
         }
         @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            llContent.setVisibility(View.GONE);
+            llProgress.setVisibility(View.VISIBLE);
+        }
+        @Override
         protected Void doInBackground(Void... voids) {
             try{
                 URL hp=null;
                 businessList.clear();
 
-                hp = new URL(getString(R.string.liveurl)+"/api/verify/"+businessName+"/business");
-
+                hp = new URL(getString(R.string.liveurl)+"/verify/"+businessName+"/business");
+                Log.i("URL",hp.toString());
                 HttpURLConnection hpCon = (HttpURLConnection) hp.openConnection();
                 hpCon.connect();
 
@@ -178,7 +187,7 @@ public class Business extends AppCompatActivity {
             super.onPostExecute(aVoid);
 
             if (errCode == 0){
-                Intent i = new Intent(Business.this,ProfessionalDetails.class);
+                Intent i = new Intent(Business.this,BusinessList.class);
                 //Push the Parceable Model through the intent
                 i.putParcelableArrayListExtra("businessList", businessList);
 
