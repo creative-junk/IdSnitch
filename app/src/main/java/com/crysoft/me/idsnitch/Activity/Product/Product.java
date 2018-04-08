@@ -100,7 +100,7 @@ public class Product extends AppCompatActivity {
             focusView=etSerialNumber;
             cancel = true;
         }
-        if (TextUtils.isEmpty(selectedBrand)){
+        if (TextUtils.isEmpty(selectedBrand) || selectedBrand.equals("Choose Brand")){
             focusView=brandsSpinner;
             cancel = true;
         }
@@ -237,7 +237,7 @@ public class Product extends AppCompatActivity {
 
                     JSONObject profileObject = new JSONObject(result);
                     JSONArray brands = profileObject.getJSONArray("brands");
-
+                    spinnerArray.add("Choose Brand");
                     for (int i=0;i < brands.length();i++){
                         JSONObject brand = brands.getJSONObject(i);
                         BrandModel brandDetails = new BrandModel();
