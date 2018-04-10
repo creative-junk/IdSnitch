@@ -87,6 +87,8 @@ public class Business extends AppCompatActivity {
             }
         });
 
+        llContent.setVisibility(View.VISIBLE);
+        llProgress.setVisibility(View.GONE);
 
     }
     public void goToMain(View view){

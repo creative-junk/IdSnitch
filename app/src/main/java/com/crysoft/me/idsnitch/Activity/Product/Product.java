@@ -79,7 +79,8 @@ public class Product extends AppCompatActivity {
                 verifyProduct();
             }
         });
-
+        llContent.setVisibility(View.VISIBLE);
+        llProgress.setVisibility(View.GONE);
 
     }
     public void goToMain(View view){

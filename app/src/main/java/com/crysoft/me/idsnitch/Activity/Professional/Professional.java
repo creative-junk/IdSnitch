@@ -63,6 +63,8 @@ public class Professional extends AppCompatActivity {
             }
         });
 
+        llContent.setVisibility(View.VISIBLE);
+        llProgress.setVisibility(View.GONE);
     }
 
     private void verifyProfessional() {

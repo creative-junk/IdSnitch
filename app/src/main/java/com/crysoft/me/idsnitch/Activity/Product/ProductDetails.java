@@ -23,6 +23,8 @@ public class ProductDetails extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         tvSerialNumber = (TextView) findViewById(R.id.tvSerialNumber);
         tvBrand = (TextView) findViewById(R.id.tvBrand);
         tvProductInfo = (TextView) findViewById(R.id.tvProductInfo);
@@ -37,5 +39,9 @@ public class ProductDetails extends AppCompatActivity {
         tvDistributorInfo.setText(product.getDistributor());
         tvProductName.setText(product.getBrand());
     }
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 }

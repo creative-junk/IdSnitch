@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">IDENTITY SNITCH</string>
-    <string name="liveurl">http://10.0.2.2:8000/api</string>
+    <string name="liveurl">http://app.identitysnitch.com/api</string>
 
     <string name="title_activity_professional">Professional</string>
     <string name="title_activity_product">Product</string>
@@ -9,4 +9,25 @@
     <string name="title_activity_business_details">Business Details</string>
     <string name="title_activity_product_details">Product Details</string>
     <string name="title_activity_professional_details">Professional Profile</string>
+
+
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Identity Snitch!</string>
+    <string name="slide_1_desc">The easiest way to verify Identities using just your phone! </string>
+
+    <string name="slide_2_title">Verify Products</string>
+    <string name="slide_2_desc">The easiest way to verify authentic products, only a click away!</string>
+
+    <string name="slide_3_title">Verify Businesses</string>
+    <string name="slide_3_desc">Easy to use Business License verification</string>
+
+    <string name="slide_4_title">One Click Verification</string>
+    <string name="slide_4_desc">Verify Products, Identities and Business Licenses with a simple two step process!</string>
+
+
 </resources>

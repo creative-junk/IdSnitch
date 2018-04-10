@@ -46,6 +46,8 @@ public class ProfessionalDetails extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         tvFirstName = (TextView) findViewById(R.id.tvFirstName);
         tvMiddleName = (TextView) findViewById(R.id.tvMiddleName);
         tvLastName = (TextView) findViewById(R.id.tvLastName);
@@ -160,5 +162,10 @@ public class ProfessionalDetails extends AppCompatActivity {
             certificationAdapter.notifyDataSetChanged();
 
         }
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
     }
 }

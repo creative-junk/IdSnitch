@@ -69,6 +69,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:hint="ID Number"
+                    android:maxLines="1"
                     android:textColorHint="@android:color/darker_gray" />
 
 

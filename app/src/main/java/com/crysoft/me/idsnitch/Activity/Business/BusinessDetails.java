@@ -48,6 +48,8 @@ public class BusinessDetails extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         tvBusinessName = (TextView) findViewById(R.id.tvBusinessName);
         tvCountry = (TextView) findViewById(R.id.tvCountry);
 
@@ -130,5 +132,9 @@ public class BusinessDetails extends AppCompatActivity {
 
         }
     }
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 }
